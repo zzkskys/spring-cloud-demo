@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        # 尝试路由百度路径
+        - id: baidu
+          uri: https://www.baidu.com/
+          predicates:
+            - Path=/baidu/**
+          filters:
+            - StripPrefix=1 #截取 -Path 中的第一段路径
+
+

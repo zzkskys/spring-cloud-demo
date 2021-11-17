@@ -10,7 +10,7 @@
     <modules>
         <module>nacos-provider</module>
         <module>nacos-consumer</module>
-        <module>nacos-config</module>
+        <module>spring-gateway</module>
     </modules>
     <name>spring-cloud-demo</name>
     <description>Demo project for Spring Boot</description>

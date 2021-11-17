@@ -1,4 +1,4 @@
-package com.example.nacosprovider;
+package com.example.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class NacosProviderApplication {
+public class SpringGatewayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(NacosProviderApplication.class, args);
+        SpringApplication.run(SpringGatewayApplication.class, args);
     }
-
 }

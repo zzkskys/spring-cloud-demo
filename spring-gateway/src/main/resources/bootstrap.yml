@@ -1,12 +1,19 @@
 spring:
   application:
-    name: nacos-provider
+    name: spring-gateway
 
   cloud:
     nacos:
       discovery:
         # 向服务注册中心注册该服务,确保服务注册中心存活
         server-addr: localhost:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true #是否开启服务器发现
+          lower-case-service-id: true #是否将服务ID转换为小写ID
+
 management:
   endpoints:
     web:
