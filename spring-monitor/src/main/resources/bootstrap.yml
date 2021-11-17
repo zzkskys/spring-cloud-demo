@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-monitor
+
+  cloud:
+    nacos:
+      discovery:
+        # 向服务注册中心注册该服务,确保服务注册中心存活
+        server-addr: localhost:8848

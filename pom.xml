@@ -11,6 +11,7 @@
         <module>nacos-provider</module>
         <module>nacos-consumer</module>
         <module>spring-gateway</module>
+        <module>spring-monitor</module>
     </modules>
     <name>spring-cloud-demo</name>
     <description>Demo project for Spring Boot</description>
@@ -20,7 +21,7 @@
         <spring-cloud.version>2020.0.4</spring-cloud.version>
         <spring-boot.version>2.4.2</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot-admin.version>2.4.3</spring-boot-admin.version>
+        <spring-boot-admin.version>2.5.3</spring-boot-admin.version>
         <hutool.version>5.7.3</hutool.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
     </properties>
@@ -48,13 +49,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <!--监控客户端-->
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>${spring-boot-admin.version}</version>
         </dependency>
 
         <dependency>
