@@ -1,15 +1,28 @@
 spring:
-  application:
-    name: nacos-consumer
-
   cloud:
     nacos:
       config:
         file-extension: yml
+---
+# 开发环境
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.1.254:8848
+  config:
+    activate:
+      on-profile: dev
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+
+---
+# 测试环境
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.1.254:8848
+  config:
+    activate:
+      on-profile: test
+
+
 
