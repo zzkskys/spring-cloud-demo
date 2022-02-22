@@ -12,6 +12,7 @@
         <module>nacos-consumer</module>
         <module>spring-gateway</module>
         <module>spring-monitor</module>
+        <module>security-server</module>
     </modules>
     <name>spring-cloud-demo</name>
     <description>Demo project for Spring Boot</description>
