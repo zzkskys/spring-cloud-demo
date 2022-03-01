@@ -1,4 +1,4 @@
-package com.example.securityserver.config;
+package com.example.resource.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,18 +31,11 @@ public class TokenConfig {
     }
 
 
+
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setSigningKey(JWT_SINGLE_KEY);
         return converter;
-    }
-
-    /**
-     * 颁发与存储令牌授权码服务类
-     */
-    @Bean
-    public AuthorizationCodeServices codeServices() {
-        return new InMemoryAuthorizationCodeServices();
     }
 }

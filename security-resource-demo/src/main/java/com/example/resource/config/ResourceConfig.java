@@ -1,18 +1,17 @@
 package com.example.resource.config;
 
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
  * Created Date : 2022/02/26
@@ -21,15 +20,19 @@ import org.springframework.security.oauth2.provider.token.ResourceServerTokenSer
  */
 @Configuration
 @EnableResourceServer
+@AllArgsConstructor
 public class ResourceConfig extends ResourceServerConfigurerAdapter {
 
     public static final String RESOURCE_ID = "res1";
+
+    private final TokenStore tokenStore;
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources
                 .resourceId(RESOURCE_ID)
-                .tokenServices(tokenServices())
+                .tokenStore(tokenStore)
+//                .tokenServices(tokenServices())
                 .stateless(true);
     }
 
