@@ -15,8 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import java.util.Collections;
-
 /**
  * Created Date : 2022/02/17
  *
@@ -55,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails user = User
                 .withUsername("admin")
                 .password(encoder.encode("test"))
-                .authorities(Collections.emptyList())
+                .authorities("p1", "p2")
                 .build();
         return new InMemoryUserDetailsManager(user);
     }

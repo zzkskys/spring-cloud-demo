@@ -43,6 +43,9 @@ public class TokenConfig {
         return services;
     }
 
+    /**
+     * 颁发与存储令牌授权码服务类
+     */
     @Bean
     public AuthorizationCodeServices codeServices() {
         return new InMemoryAuthorizationCodeServices();

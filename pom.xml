@@ -13,6 +13,7 @@
         <module>spring-gateway</module>
         <module>spring-monitor</module>
         <module>security-server</module>
+        <module>security-resource-demo</module>
     </modules>
     <name>spring-cloud-demo</name>
     <description>Demo project for Spring Boot</description>
@@ -25,6 +26,7 @@
         <spring-boot-admin.version>2.5.3</spring-boot-admin.version>
         <hutool.version>5.7.3</hutool.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+
     </properties>
 
     <dependencies>

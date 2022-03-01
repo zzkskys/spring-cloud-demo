@@ -47,7 +47,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 //允许的授权范围
                 .scopes("all")
                 //是否自动批准
-                .autoApprove(false)
+                .autoApprove(true)
                 //回调地址
                 .redirectUris("http://www.baidu.com");
     }
