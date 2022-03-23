@@ -40,10 +40,12 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
+                .formLogin().disable()
+
                 .authorizeRequests(it -> {
+//                    it.anyRequest().permitAll();
                     it.antMatchers("/**").access("#oauth2.hasScope('all')");
                 })
-                .formLogin().and()
                 .sessionManagement(management -> {
                     management.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
                 });
